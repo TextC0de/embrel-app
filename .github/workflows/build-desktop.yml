@@ -50,9 +50,11 @@ jobs:
         USE_HARD_LINKS: false
         ELECTRON_CACHE: ~\AppData\Local\electron\Cache
         ELECTRON_BUILDER_CACHE: ~\.cache\electron-builder
+        FORCE_COLOR: 0
       run: |
         npm config set script-shell "C:\\Windows\\System32\\cmd.exe"
-        npm run dist:win
+        npx --yes patch-package --error-on-fail || echo "No patches to apply"
+        npx --yes electron-builder --win --config.npmRebuild=false --config.nodeGypRebuild=false
       
     - name: Upload Windows artifacts
       uses: actions/upload-artifact@v4
