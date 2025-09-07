@@ -1,0 +1,1 @@
+ALTER TABLE `settings` ADD `desktop_mode_enabled` integer DEFAULT false;

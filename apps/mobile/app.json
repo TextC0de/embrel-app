@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "EMBREL",
+    "slug": "embrel",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logos/logo-embrel.jpg",
+    "scheme": "embrel",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logos/logo-embrel.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.textcode.embrel"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/logos/logo-embrel.jpg"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/logos/logo-embrel.jpg",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-sqlite"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "26235945-20f9-4541-8d98-564444fb1305"
+      }
+    }
+  }
+}

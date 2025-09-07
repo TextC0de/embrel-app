@@ -1,0 +1,19 @@
+{
+  "input": "./public/icon.png",
+  "output": "./public/",
+  "flatten": true,
+  "icons": {
+    "ico": {
+      "name": "icon",
+      "sizes": [16, 24, 32, 48, 64, 128, 256]
+    },
+    "icns": {
+      "name": "icon",
+      "sizes": [16, 32, 64, 128, 256, 512, 1024]
+    },
+    "png": {
+      "name": "icon",
+      "sizes": [256, 512, 1024]
+    }
+  }
+}
