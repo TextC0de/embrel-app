@@ -2,7 +2,6 @@
   "name": "embrel-desktop",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "npm run electron:build && concurrently \"vite\" \"npm run electron:dev\"",
@@ -15,7 +14,7 @@
     "predist": "npm run generate-icons",
     "dist": "npm run build && electron-builder",
     "dist:mac": "npm run build && electron-builder --mac",
-    "dist:win": "npm run build && electron-builder --win",
+    "dist:win": "npm run build && electron-builder --win portable",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -79,15 +78,7 @@
         {
           "target": "portable",
           "arch": [
-            "x64",
-            "ia32"
-          ]
-        },
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
+            "x64"
           ]
         }
       ],
@@ -97,16 +88,8 @@
     },
     "portable": {
       "artifactName": "EMBREL-Desktop-Portable-${version}.exe",
-      "requestExecutionLevel": "admin"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "artifactName": "EMBREL-Desktop-Setup-${version}.exe",
-      "perMachine": true,
-      "runAfterFinish": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+      "requestExecutionLevel": "admin",
+      "unpackDirName": "embrel-desktop"
     }
   }
 }

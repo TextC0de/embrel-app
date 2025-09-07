@@ -54,7 +54,7 @@ jobs:
         FORCE_COLOR: 0
       run: |
         npm run build
-        npx --yes electron-builder --win --config.npmRebuild=false
+        npx --yes electron-builder --win portable --config.npmRebuild=false
       
     - name: Upload Windows artifacts
       uses: actions/upload-artifact@v4
