@@ -42,7 +42,7 @@ jobs:
       working-directory: ./apps/embrel-desktop
       run: |
         npm install -g npm@latest
-        npm ci
+        npm install
       
     - name: Build Windows executable
       working-directory: ./apps/embrel-desktop
