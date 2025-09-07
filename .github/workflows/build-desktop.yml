@@ -3,8 +3,6 @@ name: Build Desktop App
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'apps/embrel-desktop/**'
   workflow_dispatch:
 
 jobs:
