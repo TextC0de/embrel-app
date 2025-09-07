@@ -42,7 +42,8 @@ jobs:
       working-directory: ./apps/embrel-desktop
       run: |
         npm install -g npm@latest
-        npm install
+        npm install --no-optional
+        npm install robotjs --build-from-source
       
     - name: Build Windows executable
       working-directory: ./apps/embrel-desktop
@@ -52,9 +53,8 @@ jobs:
         ELECTRON_BUILDER_CACHE: ~\.cache\electron-builder
         FORCE_COLOR: 0
       run: |
-        npm config set script-shell "C:\\Windows\\System32\\cmd.exe"
-        npx --yes patch-package --error-on-fail || echo "No patches to apply"
-        npx --yes electron-builder --win --config.npmRebuild=false --config.nodeGypRebuild=false
+        npm run build
+        npx --yes electron-builder --win --config.npmRebuild=false
       
     - name: Upload Windows artifacts
       uses: actions/upload-artifact@v4
